@@ -27,7 +27,7 @@ export default {
     path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
     filename: 'main.js',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd2'
   },
   plugins: [
     new HardSourceWebpackPlugin(),
