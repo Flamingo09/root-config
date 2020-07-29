@@ -32,8 +32,8 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/order-status" component={fetchMicroApp('@trading/trade-orders')} />
-          <Route exact path="/order-status" component={fetchMicroApp('@trading/executed-trades')} />
+          <Route exact path="/order-status" component={() => fetchMicroApp('@datacenter-central/place-order')} />
+          <Route exact path="/order-status" component={() => fetchMicroApp('@datacenter-central/order-status')} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
