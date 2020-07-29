@@ -10,6 +10,7 @@ export default {
     // To support react-hot-loader
     alias: {
       'react-dom': '@hot-loader/react-dom',
+      'single-spa-react/parcel': 'single-spa-react/lib/esm/parcel.js'
     },
   },
   devtool: 'cheap-module-eval-source-map', // more info:https://webpack.js.org/guides/development/#using-source-maps and https://webpack.js.org/configuration/devtool/
@@ -25,7 +26,8 @@ export default {
   output: {
     path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'main.js',
+    libraryTarget: 'umd'
   },
   plugins: [
     new HardSourceWebpackPlugin(),
@@ -68,6 +70,10 @@ export default {
             ],
           },
         },
+      },
+      {
+        test: /\.d\.ts$/,
+        loader: 'ignore-loader'
       },
       {
         test: /\.eot(\?v=\d+.\d+.\d+)?$/,
@@ -150,4 +156,9 @@ export default {
       },
     ],
   },
+  externals: [
+    'react',
+    'react-dom',
+    /^datacenter-central\/.+$/
+  ]
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Test } from './Test';
+import { Test } from '../Test';
 
 const HomePage = () => {
   return (
