@@ -30,8 +30,7 @@
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
     "prettier:fix": "prettier . --write \"**/*.*\""
   },
-  "author": "Cory House",
-  "license": "MIT",
+  "author": "Flamingo09",
   "dependencies": {
     "@babel/runtime": "7.10.5",
     "@hot-loader/react-dom": "^16.13.0",
