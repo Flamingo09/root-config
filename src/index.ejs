@@ -29,8 +29,8 @@
         "react": "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.development.js",
         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.development.js",
         "@datacenter-central/dashboard": "http://localhost:3000/main.js",
-        "@datacenter-central/place-order": "http://localhost:8080/main.js",
-        "@datacenter-central/order-status": "http://localhost:4000/main.js"
+        "@datacenter-central/order-status": "http://localhost:8080/main.js",
+        "@datacenter-central/place-order": "http://localhost:4000/main.js"
       }
     }
   </script>
@@ -41,7 +41,7 @@
 <div id="app"/>
 <script>
   var SystemJS = System;
-  System.import('@datacenter-central/dashboard');
+  SystemJS.import('@datacenter-central/dashboard');
 </script>
 </body>
 </html>

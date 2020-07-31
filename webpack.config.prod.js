@@ -16,7 +16,7 @@ export default {
     // To support react-hot-loader
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      'single-spa-react/parcel': 'single-spa-react/lib/esm/parcel.js'
+      'single-spa-react/parcel': 'single-spa-react/lib/esm/parcel.js',
     },
   },
   devtool: 'source-map', // more info:https://webpack.js.org/guides/production/#source-mapping and https://webpack.js.org/configuration/devtool/
@@ -27,7 +27,7 @@ export default {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: '[name].[contenthash].js',
-    libraryTarget: 'umd2'
+    libraryTarget: 'umd2',
   },
   plugins: [
     // Tells React to build in prod mode. https://facebook.github.io/react/downloads.html
@@ -179,9 +179,5 @@ export default {
       },
     ],
   },
-  externals: [
-    'react',
-    'react-dom',
-    /^@datacenter-central\/.+$/
-  ]
+  externals: ['react', 'react-dom', /^@datacenter-central\/.+$/],
 };
