@@ -11,6 +11,18 @@ export const remoteImport = async (moduleName) => {
 };
 
 /**
+ * @description Add dom element to make div element to render micro app
+ * */
+export const addDomElement = (id) => {
+  if (!document.getElementById(id)) {
+    const bodyElement = document.getElementsByTagName("body")[0];
+    const domElement = document.createElement("div");
+    domElement.id = id;
+    bodyElement.appendChild(domElement);
+  }
+};
+
+/**
  * @description adding <base href='basePath' /> in index.ejs, where microapps routes will work on top of this
  * */
 export const addBaseRef = (id, basePath) => {
@@ -24,11 +36,11 @@ export const addBaseRef = (id, basePath) => {
 };
 
 /**
- * @description removes the <base> tag from the main dom.
+ * @description remove the div for micro app
  * */
-export const removeBaseRef = (id) => {
+export const removeDomElement = (id) => {
   const domElement = document.getElementById(id);
   if(domElement)
     domElement.remove();
-};
+}
 

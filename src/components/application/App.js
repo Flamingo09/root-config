@@ -38,7 +38,8 @@ class App extends React.Component {
             render={() => (
               <FetchMicroApp
                 moduleName="@datacenter-central/order-status"
-                basePath="order-status"
+                basePath="/order-status"
+                appName="order-status"
               />
             )}
           />
@@ -48,7 +49,8 @@ class App extends React.Component {
             render={() => (
               <FetchMicroApp
                 moduleName="@datacenter-central/place-order"
-                basePath="place-order"
+                basePath="/place-order"
+                appName="place-order"
               />
             )}
           />
