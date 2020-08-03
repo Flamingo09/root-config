@@ -11,16 +11,37 @@
     To track JavaScript errors via TrackJS, sign up for a free trial at TrackJS.com and enter your token in /webpack.config.prod.js on line 55.
    -->
   <% if (htmlWebpackPlugin.options.trackJSToken) { %>
-  <script>window._trackJs = {token: '<%= htmlWebpackPlugin.options.trackJSToken %>'};</script>
-  <script src="https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js"></script>
+    <script>window._trackJs = {token: '<%= htmlWebpackPlugin.options.trackJSToken %>'};</script>
+    <script src="https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js"></script>
   <% } %>
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8"/>
-  <title>React Slingshot</title>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/system.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/amd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/named-exports.js"></script>
+  <script src="https://unpkg.com/regenerator-runtime@0.13.1/runtime.js"></script>
+  <meta name="importmap-type" content="systemjs-importmap"/>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "react": "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.development.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.development.js",
+        "@datacenter-central/dashboard": "http://localhost:3000/main.js",
+        "@datacenter-central/order-status": "http://localhost:8080/main.js",
+        "@datacenter-central/place-order": "http://localhost:4000/main.js"
+      }
+    }
+  </script>
+  <title>Datacenter Central</title>
 </head>
 <body>
-<div id="app"></div>
+<div id="containerHeader"/>
+<div id="app"/>
+<script>
+  var SystemJS = System;
+  SystemJS.import('@datacenter-central/dashboard');
+</script>
 </body>
 </html>

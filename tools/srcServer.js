@@ -22,7 +22,12 @@ browserSync({
   server: {
     baseDir: 'src',
 
+    cors: true,
     middleware: [
+      function (req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+      },
       historyApiFallback({
         disableDotRule: true,
         htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
